@@ -5,23 +5,23 @@ import { useEffect, useRef, useState } from "react";
 const faqs = [
   {
     question: "Do I really not need an account?",
-    answer: "Correct. OpenMirror works purely on your local network. We don't have a database of users because we don't need one to stream data from your phone to your laptop's browser."
+    answer: "Correct. OpenMirror requires zero sign-up. Open the app, tap Start Sharing, and you're live. No email, no password, no subscription."
   },
   {
     question: "Is my screen data secure?",
-    answer: "Your screen content never leaves your local Wi-Fi network. There is no cloud relay or middleman server. It's a direct point-to-point stream between your devices."
+    answer: "Yes. Everything runs on your local network — your screen data never touches an external server. No cloud, no logs, no third party involved."
   },
   {
     question: "What kind of latency should I expect?",
-    answer: "On a standard 5GHz Wi-Fi network, latency is typically under 15-20ms. This is fast enough for smooth presentations and even casual mobile gaming demos."
+    answer: "Under 20ms on a solid Wi-Fi connection. Performance depends on your network quality, but on a standard home or office Wi-Fi it feels instant."
   },
   {
     question: "Which devices are supported?",
-    answer: "The broadcaster app is available for Android. The viewer works in any modern mobile or desktop browser (Chrome, Safari, Firefox, Edge) on any operating system."
+    answer: "OpenMirror runs on Android phones. The viewer side works on any device with a modern browser — PC, Mac, tablet, or another phone."
   },
   {
-    question: "Does it work over mobile data?",
-    answer: "By default, OpenMirror is designed for local Wi-Fi for maximum performance and zero configuration. However, it can work over a mobile hotspot if the devices are connected to it."
+    question: "Does the viewer need to install anything?",
+    answer: "No. Viewers just open a URL in any browser — Chrome, Firefox, Safari, Edge. Zero install, zero account on their side."
   }
 ];
 
@@ -59,9 +59,10 @@ export default function FAQSection() {
           <h2
             className="reveal font-display"
             style={{
-              fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)",
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "2.2rem",
               fontWeight: 400,
-              marginTop: 24,
+              marginTop: 12,
               letterSpacing: "-0.01em",
               lineHeight: 1.1,
               color: "var(--text-primary)",
@@ -72,7 +73,7 @@ export default function FAQSection() {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           {faqs.map((faq, i) => (
             <div
               key={i}
@@ -80,7 +81,7 @@ export default function FAQSection() {
               style={{
                 background: "var(--bg-surface)",
                 border: "1px solid var(--border)",
-                borderRadius: "24px",
+                borderRadius: "8px",
                 overflow: "hidden",
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                 boxShadow: activeIndex === i ? "0 10px 30px rgba(15,26,15,0.05)" : "none",
