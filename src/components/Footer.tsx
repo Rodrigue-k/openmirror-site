@@ -28,15 +28,17 @@ export default function Footer() {
               style={{
                 width: 32,
                 height: 32,
-                border: "1px solid var(--border)",
                 borderRadius: 8,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: "var(--bg-surface)",
+                background: "var(--text-primary)",
               }}
             >
-              <div style={{ width: 12, height: 12, border: "2px solid var(--text-primary)", borderRadius: 3, opacity: 0.8 }} />
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--bg-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="8" y="2" width="14" height="14" rx="3" opacity="0.4" />
+                <rect x="2" y="8" width="14" height="14" rx="3" />
+              </svg>
             </div>
             <span
               style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--text-primary)", letterSpacing: "-0.01em" }}

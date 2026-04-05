@@ -30,23 +30,23 @@ export default function NavBar() {
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
           <div
             style={{
-              width: 32,
-              height: 32,
-              borderRadius: "8px",
+              width: 34,
+              height: 34,
+              borderRadius: "10px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "rgba(15, 26, 15, 0.05)",
-              border: "1px solid var(--border)",
+              background: "var(--text-primary)",
+              boxShadow: "0 4px 12px rgba(15,26,15,0.1)",
             }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-              <line x1="12" y1="3" x2="12" y2="21" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--bg-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="8" y="2" width="14" height="14" rx="3" opacity="0.4" />
+              <rect x="2" y="8" width="14" height="14" rx="3" />
             </svg>
           </div>
           <span
-            style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-primary)", letterSpacing: "-0.01em" }}
+            style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text-primary)", letterSpacing: "-0.02em" }}
           >
             OpenMirror
           </span>

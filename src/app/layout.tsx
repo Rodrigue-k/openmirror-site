@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     "open source", "presentation", "mirror", "no install",
   ],
   authors: [{ name: "OpenMirror" }],
+  icons: {
+    icon: "/icon",
+    apple: "/apple-icon",
+  },
   openGraph: {
     title: "OpenMirror — Your phone screen. In your browser. Instantly.",
     description:
@@ -47,9 +51,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 
