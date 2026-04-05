@@ -133,7 +133,7 @@ export default function HeroSection() {
           </div>
 
           {/* Visual Content: Overlap System */}
-          <div className="relative order-first lg:order-last px-12 lg:px-0 lg:-translate-y-4 lg:translate-x-12">
+          <div className="relative order-last px-12 lg:px-0 lg:-translate-y-4 lg:translate-x-12">
             <HeroMockup currentIndex={currentIndex} />
           </div>
 
