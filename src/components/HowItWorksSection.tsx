@@ -162,7 +162,7 @@ export default function HowItWorksSection() {
           className="reveal"
           style={{ 
             marginTop: 32, 
-            width: "460px", 
+            width: "min(460px, calc(100% - 32px))",
             maxHeight: "80px", 
             background: "var(--bg-secondary)", 
             border: "1px solid var(--border)", 
