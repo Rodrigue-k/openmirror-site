@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary:     #EBF0EB;
+  --bg-secondary:   #E2E9E2;
+  --bg-surface:     #F2F5F2;
+  --text-primary:   #0F1A0F;
+  --text-secondary: #3D4F3D;
+  --text-muted:     #7A927A;
+  --border:         rgba(15,26,15,0.1);
+  --btn-primary-bg: #0F1A0F;
+  --btn-primary-fg: #EBF0EB;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background:   var(--bg-primary);
+  --color-foreground:   var(--text-primary);
+  --color-accent:       var(--btn-primary-bg);
+  --font-display:       var(--font-fraunces), serif;
+  --font-sans:          var(--font-dm-sans), sans-serif;
+  --font-mono:          var(--font-dm-mono), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Subtile grain effect */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ─── Typography ─────────────────────────────────────────────── */
+.font-display { font-family: var(--font-fraunces), serif; }
+.font-sans    { font-family: var(--font-dm-sans), sans-serif; }
+.font-mono    { font-family: var(--font-dm-mono), monospace; }
+
+h1, h2, h3 { 
+  font-family: var(--font-fraunces), serif;
+  font-weight: 400; 
+  line-height: 1.25; 
+  letter-spacing: -0.01em; 
+}
+
+/* ─── Components Utility ─────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.btn-outline:hover {
+  background: rgba(15, 26, 15, 0.05);
+}
+
+/* ─── Card / Mockup Shadows ──────────────────────────────────── */
+.mockup-shadow-pc {
+  filter: drop-shadow(0 40px 80px rgba(15, 26, 15, 0.12));
+}
+
+.mockup-shadow-phone {
+  filter: drop-shadow(20px 20px 60px rgba(15, 26, 15, 0.18));
+}
+
+/* Section Separator */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(15, 26, 15, 0.12);
+  position: relative;
+  margin: 60px 0;
+}
+.section-divider::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-primary);
+  padding: 0 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* ─── Animations ──────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 0.6s ease both; }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+section { padding: 120px 0; position: relative; }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
