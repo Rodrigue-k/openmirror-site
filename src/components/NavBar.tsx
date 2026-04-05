@@ -70,15 +70,14 @@ export default function NavBar() {
           >
             Features
           </Link>
-          <a
-            href="https://github.com/openmirror/openmirror"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-            style={{ padding: "8px 18px", fontSize: "0.8rem" }}
+          <Link
+            href="#download"
+            style={{ fontSize: "0.85rem", color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, transition: "opacity 0.2s" }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = "0.7")}
+            onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
           >
-            GitHub
-          </a>
+            Download
+          </Link>
         </nav>
       </div>
     </header>

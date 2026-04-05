@@ -8,28 +8,23 @@ const useCases = [
     tag: "01 — CONFERENCE",
     title: "Conferences & presentations",
     description:
-      "Project your slides or demos from your phone to the room display — or let every attendee follow along on their own device. No HDMI adapter panic.",
+      "Project your slides or demos from your phone directly to your PC browser — and let every attendee follow along on their own device.",
     visual: (
       <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%" }}>
-        {/* Conference screen */}
-        <rect x="60" y="10" width="160" height="100" rx="8" fill="var(--bg-secondary)" stroke="var(--border)" strokeWidth="1" />
-        <rect x="68" y="22" width="144" height="80" rx="4" fill="var(--bg-primary)" opacity="0.5" />
-        {/* Slide content */}
-        <rect x="78" y="32" width="80" height="6" rx="2" fill="var(--text-primary)" opacity="0.1" />
-        <rect x="78" y="44" width="120" height="3" rx="1" fill="var(--text-primary)" opacity="0.05" />
-        <rect x="78" y="51" width="100" height="3" rx="1" fill="var(--text-primary)" opacity="0.05" />
-        {/* Chart */}
-        <rect x="78" y="68" width="12" height="24" rx="2" fill="var(--bg-interactive-active)" opacity="0.2" />
-        <rect x="94" y="74" width="12" height="18" rx="2" fill="var(--bg-interactive-active)" opacity="0.1" />
-        <rect x="110" y="62" width="12" height="30" rx="2" fill="var(--bg-interactive-active)" opacity="0.3" />
-        
-        {/* Audience phones */}
-        {[40, 100, 160, 220].map((x, i) => (
-          <g key={i}>
-            <rect x={x} y={138} width={20} height={14} rx={3} fill="var(--bg-surface)" stroke="var(--border)" strokeWidth="0.5" />
-            <rect x={x+4} y={142} width={12} height={2} rx={0.5} fill="var(--text-primary)" opacity="0.1" />
-          </g>
-        ))}
+        {/* Laptop Frame */}
+        <rect x="60" y="30" width="160" height="90" rx="4" stroke="#0F1A0F" strokeWidth="1.5" strokeOpacity="0.4" fill="transparent" />
+        <path d="M50 120H230V124C230 126.209 228.209 128 226 128H54C51.7909 128 50 126.209 50 124V120Z" fill="#0F1A0F" fillOpacity="0.1" stroke="#0F1A0F" strokeWidth="1.5" strokeOpacity="0.15" />
+        {/* Slides Content */}
+        <rect x="75" y="45" width="130" height="60" rx="2" fill="#0F1A0F" fillOpacity="0.05" />
+        <rect x="85" y="55" width="60" height="4" rx="2" fill="#0F1A0F" fillOpacity="0.2" />
+        <rect x="85" y="65" width="110" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.1" />
+        <rect x="85" y="72" width="100" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.1" />
+        {/* Wi-Fi Icon */}
+        <g opacity="0.4">
+          <path d="M205 45C207 43 210 43 212 45" stroke="#0F1A0F" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M202 42C206 38 211 38 215 42" stroke="#0F1A0F" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="208.5" cy="49.5" r="1.5" fill="#0F1A0F" />
+        </g>
       </svg>
     ),
   },
@@ -38,18 +33,21 @@ const useCases = [
     tag: "02 — EDUCATION",
     title: "Teaching & training",
     description:
-      "Let students follow your screen in real time without crowding around. Works in classrooms, workshops, online sessions via local LAN.",
+      "Let students follow your screen in real time without crowding around. Works in classrooms, workshops, and any shared network.",
     visual: (
       <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%" }}>
-        {/* Whiteboard */}
-        <rect x="20" y="10" width="240" height="120" rx="12" fill="var(--bg-secondary)" stroke="var(--border)" strokeWidth="1" />
-        {/* Code on board */}
-        <rect x="40" y="40" width="100" height="6" rx="2" fill="var(--text-primary)" opacity="0.15" />
-        <rect x="40" y="54" width="140" height="3" rx="1" fill="var(--text-secondary)" opacity="0.1" />
-        <rect x="40" y="62" width="120" height="3" rx="1" fill="var(--text-secondary)" opacity="0.05" />
-        <rect x="40" y="70" width="130" height="3" rx="1" fill="var(--text-secondary)" opacity="0.08" />
-        {/* Signal from board */}
-        <path d="M220 60 Q250 40 265 80" stroke="var(--bg-interactive-active)" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.3" />
+        {/* Dashboard Frame */}
+        <rect x="50" y="25" width="180" height="110" rx="6" stroke="#0F1A0F" strokeWidth="1.5" strokeOpacity="0.4" fill="transparent" />
+        <rect x="50" y="25" width="180" height="20" rx="6" fill="#0F1A0F" fillOpacity="0.1" />
+        {/* Bars Graph */}
+        <rect x="70" y="80" width="15" height="35" rx="2" fill="#0F1A0F" fillOpacity="0.15" />
+        <rect x="95" y="65" width="15" height="50" rx="2" fill="#0F1A0F" fillOpacity="0.15" />
+        <rect x="120" y="90" width="15" height="25" rx="2" fill="#0F1A0F" fillOpacity="0.15" />
+        {/* Text area */}
+        <rect x="150" y="65" width="60" height="4" rx="2" fill="#0F1A0F" fillOpacity="0.2" />
+        <rect x="150" y="75" width="50" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.1" />
+        <rect x="150" y="82" width="55" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.1" />
+        <rect x="150" y="89" width="45" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.1" />
       </svg>
     ),
   },
@@ -61,13 +59,17 @@ const useCases = [
       "Show off your mobile app to clients or colleagues without cables. Point them to the URL, they see your screen instantly.",
     visual: (
       <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%" }}>
-        {/* Phone center */}
-        <rect x="105" y="15" width="70" height="130" rx="16" fill="var(--bg-surface)" stroke="var(--border)" strokeWidth="1" />
-        <rect x="112" y="25" width="56" height="110" rx="10" fill="var(--bg-primary)" opacity="0.5" />
-        {/* App content */}
-        <rect x="120" y="40" width="40" height="40" rx="8" fill="var(--bg-interactive-active)" opacity="0.1" />
-        <rect x="120" y="90" width="40" height="4" rx="2" fill="var(--text-primary)" opacity="0.1" />
-        <rect x="120" y="100" width="20" height="4" rx="2" fill="var(--text-primary)" opacity="0.05" />
+        {/* Phone Mockup */}
+        <rect x="110" y="20" width="60" height="120" rx="12" stroke="#0F1A0F" strokeWidth="1.5" strokeOpacity="0.4" fill="transparent" />
+        <circle cx="140" cy="132" r="3" stroke="#0F1A0F" strokeWidth="1.5" strokeOpacity="0.15" />
+        <rect x="130" y="28" width="20" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.15" />
+        {/* Mobile UI Schematic */}
+        <rect x="118" y="40" width="44" height="10" rx="2" fill="#0F1A0F" fillOpacity="0.1" />
+        <rect x="118" y="55" width="44" height="25" rx="4" fill="#0F1A0F" fillOpacity="0.05" />
+        <rect x="118" y="85" width="30" height="3" rx="1.5" fill="#0F1A0F" fillOpacity="0.15" />
+        <rect x="118" y="94" width="44" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.05" />
+        <rect x="118" y="100" width="40" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.05" />
+        <rect x="118" y="106" width="42" height="2" rx="1" fill="#0F1A0F" fillOpacity="0.05" />
       </svg>
     ),
   },
@@ -101,14 +103,15 @@ export default function UseCasesSection() {
     >
       <div className="container">
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 80 }}>
+        <div style={{ textAlign: "center", marginBottom: 60 }}>
           <span className="section-label reveal">Scenarios</span>
           <h2
             className="reveal font-display"
             style={{
-              fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)",
+              fontFamily: "var(--font-fraunces)",
+              fontSize: "2.2rem",
               fontWeight: 400,
-              marginTop: 24,
+              marginTop: 12,
               letterSpacing: "-0.01em",
               lineHeight: 1.1,
               color: "var(--text-primary)",
@@ -132,13 +135,13 @@ export default function UseCasesSection() {
                 gap: 0,
                 overflow: "hidden",
                 border: "1px solid var(--border)",
-                borderRadius: "32px",
+                borderRadius: "12px",
                 background: "var(--bg-surface)",
                 boxShadow: "0 4px 20px rgba(15,26,15,0.02)",
               }}
             >
               {/* Text */}
-              <div style={{ padding: "64px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ padding: "52px 40px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <span
                   style={{
                     fontSize: "0.75rem",
@@ -146,7 +149,7 @@ export default function UseCasesSection() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     color: "var(--text-muted)",
-                    marginBottom: 20,
+                    marginBottom: 16,
                   }}
                 >
                   {uc.tag}
@@ -155,7 +158,7 @@ export default function UseCasesSection() {
                   style={{
                     fontSize: "1.6rem",
                     fontWeight: 600,
-                    marginBottom: 20,
+                    marginBottom: 16,
                     color: "var(--text-primary)",
                     lineHeight: 1.2,
                     letterSpacing: "-0.01em",
@@ -166,8 +169,8 @@ export default function UseCasesSection() {
                 <p
                   style={{
                     color: "var(--text-secondary)",
-                    lineHeight: 1.7,
-                    fontSize: "1.05rem",
+                    lineHeight: 1.6,
+                    fontSize: "1rem",
                   }}
                 >
                   {uc.description}
@@ -179,7 +182,7 @@ export default function UseCasesSection() {
                 style={{
                   background: "var(--bg-secondary)",
                   borderLeft: "1px solid var(--border)",
-                  padding: "48px",
+                  padding: "38px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

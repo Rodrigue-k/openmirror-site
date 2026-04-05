@@ -88,6 +88,7 @@ export default function HowItWorksSection() {
           <h2
             className="reveal font-display"
             style={{
+              fontFamily: "var(--font-fraunces)",
               fontSize: "2.2rem",
               fontWeight: 400,
               marginTop: 12,

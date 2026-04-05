@@ -101,7 +101,15 @@ export default function HeroSection() {
             </div>
 
             {/* Headline - Relaxed line-height and increased margin */}
-            <h1 className="font-display text-[clamp(2.5rem,5.5vw,4.2rem)] leading-[1.2] text-[var(--text-primary)] mb-10">
+            <h1 
+              className="font-display leading-[1.1] text-[var(--text-primary)] mb-10"
+              style={{
+                fontFamily: "var(--font-fraunces)",
+                fontSize: "clamp(2.5rem, 5.5vw, 4.2rem)",
+                fontWeight: 400,
+                letterSpacing: "-0.01em",
+              }}
+            >
               Share your screen. Instantly.
             </h1>
 
@@ -117,11 +125,8 @@ export default function HeroSection() {
             {/* Support/CTA Block */}
             <div className="flex flex-col gap-10 w-full">
               <div className="flex flex-wrap gap-5">
-                <a href="#download" className="btn-primary">
+                <a href="https://play.google.com/store/apps/details?id=com.openmirror" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Download for Android
-                </a>
-                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="btn-outline">
-                  View on GitHub
                 </a>
               </div>
             </div>

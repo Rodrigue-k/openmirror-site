@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer
@@ -43,15 +45,10 @@ export default function Footer() {
             </span>
           </div>
           <p
-            style={{ fontSize: "0.9rem", color: "var(--text-secondary)", maxWidth: 240, lineHeight: 1.6 }}
+            style={{ fontSize: "0.95rem", color: "var(--text-secondary)", maxWidth: 240, lineHeight: 1.6 }}
           >
-            The high-performance, open-source local screen sharing engine.
+            Instant screen sharing from your phone to any browser.
           </p>
-          <span
-            style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.05em", textTransform: "uppercase", fontWeight: 500 }}
-          >
-            Made with ❤️ in Togo 🇹🇬
-          </span>
         </div>
 
         {/* Links */}
@@ -59,15 +56,12 @@ export default function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <span style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Connect</span>
             <nav style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <a href="https://github.com/openmirror/openmirror" className="footer-link" style={{ color: "var(--text-secondary)" }}>GitHub</a>
               <a href="https://twitter.com/openmirror_app" className="footer-link" style={{ color: "var(--text-secondary)" }}>Twitter</a>
-              <a href="https://github.com/openmirror/openmirror/releases" className="footer-link" style={{ color: "var(--text-secondary)" }}>Releases</a>
             </nav>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <span style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: "0.1em" }}>Legal</span>
             <nav style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <span className="footer-link" style={{ color: "var(--text-secondary)" }}>MIT License</span>
               <span className="footer-link" style={{ color: "var(--text-secondary)" }}>Privacy Policy</span>
             </nav>
           </div>
@@ -78,7 +72,7 @@ export default function Footer() {
           <p
             style={{ fontSize: "0.85rem", color: "var(--text-muted)", letterSpacing: "-0.01em" }}
           >
-            © {new Date().getFullYear()} Open Mirror Project
+            © {new Date().getFullYear()} OpenMirror
           </p>
         </div>
       </div>
