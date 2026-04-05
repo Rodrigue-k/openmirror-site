@@ -60,9 +60,9 @@ export default function NavBar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex" style={{ alignItems: "center", gap: 32 }}>
+        <nav className="nav-links-desktop" style={{ alignItems: "center", gap: 32 }}>
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               style={{ fontSize: "0.85rem", color: "var(--text-secondary)", textDecoration: "none", fontWeight: 500, transition: "opacity 0.2s" }}
@@ -70,13 +70,13 @@ export default function NavBar() {
               onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         {/* Hamburger — mobile only */}
         <button
-          className="flex md:hidden"
+          className="nav-mobile-btn"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           style={{
@@ -127,8 +127,9 @@ export default function NavBar() {
 
       {/* Mobile Dropdown */}
       <div
-        className="md:hidden"
+        className="nav-mobile-btn"
         style={{
+          flexDirection: "column",
           overflow: "hidden",
           maxHeight: menuOpen ? "240px" : "0",
           transition: "max-height 0.3s ease",
@@ -138,7 +139,7 @@ export default function NavBar() {
       >
         <nav style={{ display: "flex", flexDirection: "column", padding: "8px 0 16px" }}>
           {links.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
@@ -151,7 +152,7 @@ export default function NavBar() {
               }}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>
